@@ -1,0 +1,424 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color:grey;
+    
+}
+
+header {
+    text-align:center;
+    font-style: unset;
+    padding: 10px;
+   // background-color: #dfdddd
+}
+
+/* arrow trigger start from here */
+.slide-box-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: fixed;
+    left: -326px;
+    top: 30%;
+    animation: boxStartAni 1s ease-in-out;
+}
+
+/*.slide-box-switch{
+    border:3px solid rgb(206, 194, 194);
+    padding: 10px;
+    border-radius: 0px 7px 7px 0px;
+    background-color: black;
+    color: white;
+    border-right: none;
+
+}
+.slide-box-switch i{
+    transition: 0.5s;
+}
+.slide-box-switch .close{
+    transform: rotate(0deg);
+}
+.slide-box-switch .open{
+    transform: rotate(180deg);
+}
+
+.slide-box-switch:focus{
+    outline: none;
+}
+
+.slide-box{
+    width: 300px;
+    border:4px solid white;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 0 0px 4em 0;
+}
+.slide-box-title{
+    color: red;
+    font-size: 3em;
+}
+.slide-box-para{
+    color: white;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.links{
+    display: flex;
+    justify-content: flex-start;
+}
+.call-btn{
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    height: 40px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.call-btn i{
+    margin-right: 10px;
+}
+.fb-btn{
+    background-color: rgb(4, 77, 129);
+    color: white;
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 10px;
+}
+@keyframes boxStartAni {
+    0%{
+        left: -260px;
+    }
+    30%{
+        left: -310px;
+    }
+    60%{
+        left: -270px;
+    }
+    75%{
+        left: -305px;
+    }
+    90%{
+        left: -290px;
+    }
+    100%{
+        left: -326px;
+    }
+}
+/* arrow trigger section end here!! */
+
+.gallery{
+    display: flex;
+    gap: 1em;
+    padding-top: 10px;
+    overflow-x: auto ;
+    padding: 2em 2em;
+   // background-color: rgb(245, 229, 208);
+}
+
+.gallery::-webkit-scrollbar{
+    width: 6;
+}
+
+.item{
+    display: flex;
+    min-width: 120px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.item img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery>div{
+    flex: 1;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.gallery{
+    display: flex;
+}
+img{
+    width: 100%;
+    transition:all.5s;
+}
+img:hover{
+    transform: scale(1.5) rotate(12deg);
+}
+
+.overlay_1 {
+    position: absolute;
+    left: -120%;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(74, 72, 72, 0.5); /* Overlay background color */
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    transition: left 0.3s ease;
+    text-align:justify;
+   
+}
+
+.item:hover .overlay_1 {
+    left: 0;
+}
+
+.container {
+    position: relative;
+    width: 50%;
+  }
+  
+.menu_table{
+    background-image: url(./foodmenu/sushi_bg.jpg);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+table{
+    background-color: rgb(249, 250, 250); /* Fully opaque background color */
+    transition: background-color 3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+table:hover{
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background color */
+}
+
+
+table {
+    width: 100%;
+    border-block-width: inherit;
+    margin-top: 8px;
+    border: 2px solid black;
+}
+
+tbody tr:hover{
+    background-color: #0f5e749a;
+    color: #ddd;
+}
+
+td{
+    padding: 6px;
+    text-align: center;
+}
+
+th{
+    padding: 8px;
+    background-color: #02717d;
+    color: #ffffff; /* Set the text color for th elements */
+}
+
+.order{
+    text-align: center;
+    padding: 0 20% 0 20%;
+    text-align: center;
+}
+
+
+
+    /* Pop up for Ordering & Payment */
+    .ovl {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(39 37 14 / 84%); /* Semi-transparent black overlay */
+        justify-content: center;
+        align-items: center;
+        animation: fadeInOvl  2.5s ease forwards;
+      }
+  
+      /* Styles for the popup box */
+      .popup {
+        background: #fff; /* White background */
+        padding: 20px;
+        color: black;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        text-align: center;
+        animation: slideInPopup   2.5s ease forwards;
+      }
+  
+  @keyframes fadeInOvl {
+      from{
+          opacity: 0;
+      }
+      to{
+          opacity: 10;
+      }
+  }
+  
+  @keyframes slideInPopup {
+      from{
+          transform: translateY(-50px);
+          opacity: 0;
+      }
+      to{
+          transform: translateY(0);
+          opacity: 1;
+      }
+  }
+  
+      /* Close button style */
+      .close-btn {
+        cursor: pointer;
+        color: #333;
+        font-size: 20px;
+        font-weight: 500; 
+        padding: 0px 4px;
+        float: right;
+        border: 1px solid #333;
+        border-radius: 20%;
+        transition: color 0.3s ease;
+        display: inline;
+        animation: rotateOutCloseBtn 0.5s ease forwards; /* Animation for close button */
+      }
+  
+      @keyframes fadeOutPopup {
+          from{
+              opacity: 10;
+          }
+          to{
+              opacity: 0;
+              transform: translateY(-50px);
+          } 
+      }
+  
+      @keyframes slideOutPopup {
+        from {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+      }
+  
+      .close-btn:hover{
+          color: #ffffff;
+          background-color: #000000;
+      }
+  
+      
+      @keyframes rotateOutCloseBtn {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(180deg); /* Rotate by 180 degrees on click */
+        }
+      }
+
+
+
+.open-hour{
+    text-align: center;
+    padding: 0 1em;
+}
+
+.open-hour-section{
+    background-color: rgb(213, 209, 209, 0.459);
+    padding: 1em 1em;
+    border-radius: 10px;
+}
+.contact-info{
+    text-align: center;
+    padding: 0 1em;
+}
+
+.contact-info-section{
+    background-color: rgb(213, 209, 209, 0.459);
+    padding: 1em 1em;
+    border-radius: 10px;
+    text-align: center;
+}
+    
+.contact-info a{
+    color: #10419c;
+}
+section {
+    margin-top: 20px;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    font-size: large;
+    background-color: #02717d;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 10px;
+    border: none;
+    position: relative; /* Added position relative */
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 gainsboro, 0 17px 50px 0 gainsboro;
+}
+
+
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+h2 {
+    color: #a53e43;
+    font-style:inherit;
+    text-align: center;
+}
+
+.feedback{
+    text-align: center;
+    
+}
+
+.footer_sc {
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+}  
+
+footer{
+    background-color: rgb(128, 124, 120);
+}
